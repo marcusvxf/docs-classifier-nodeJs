@@ -4,7 +4,7 @@ import PromptService from './service';
 
 const promptsModule: FastifyPluginAsync = async (fastify, opts) => {
   // create service from fastify-postgres pool
-  const pool = (fastify as any).pg?.native;
+  const pool = (fastify as any).pg?.pool;
   if (!pool) throw new Error('Postgres plugin not registered');
 
   const service = new PromptService(pool);

@@ -3,7 +3,7 @@ import PromptModel from './model';
 import { Prompt, CreatePrompt, UpdatePrompt } from './interfaces';
 
 export default class PromptService {
-  private model: PromptModel;
+  readonly model: PromptModel;
 
   constructor(pool: Pool) {
     this.model = new PromptModel(pool);
