@@ -16,7 +16,8 @@ const ollamaPlugin: FastifyPluginAsync<{
   const service = new OllamaService({
     baseUrl: cfg.baseUrl ?? process.env.OLLAMA_BASE_URL,
     apiKey: cfg.apiKey ?? process.env.OLLAMA_API_KEY,
-    timeoutMs: cfg.timeoutMs,
+    timeoutMs:
+      cfg.timeoutMs ?? (Number(process.env.OLLAMA_TIMEOUT_MS) || undefined),
   });
 
   fastify.decorate('ollama', service);

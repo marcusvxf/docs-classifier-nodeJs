@@ -6,7 +6,7 @@ import {
   ClassifyResponse,
 } from './interfaces';
 
-const DEFAULT_MODEL = 'llama3';
+const DEFAULT_MODEL = process.env.OLLAMA_DEFAULT_MODEL || 'llama3';
 
 const DEFAULT_CLASSIFY_INSTRUCTION =
   'Classify the following document. Return a short category label and a one-sentence explanation. Respond in JSON format: { "category": "...", "explanation": "..." }';

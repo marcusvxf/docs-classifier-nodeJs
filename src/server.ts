@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import Fastify from 'fastify';
 import postgres from '@fastify/postgres';
 import pino from 'pino';

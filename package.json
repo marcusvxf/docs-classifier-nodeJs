@@ -8,7 +8,9 @@
     "build": "tsc -p .",
     "start": "node dist/server.js",
     "test": "vitest run",
-    "lint": "eslint . --ext .ts"
+    "lint": "eslint . --ext .ts",
+    "migrate": "ts-node src/migrate.ts",
+    "migrate:build": "node dist/migrate.js"
   },
   "dependencies": {
     "@fastify/multipart": "^7.7.3",
@@ -17,6 +19,7 @@
     "fastify": "^4.24.0",
     "fastify-plugin": "^5.1.0",
     "pg": "^8.18.0",
+    "postgrator": "^8.0.0",
     "supertest": "^7.2.2"
   },
   "devDependencies": {
